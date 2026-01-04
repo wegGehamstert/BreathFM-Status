@@ -1,24 +1,69 @@
-/* Das leere Div als Vollbild-Hintergrund aufbauen */
+/* --- Upptime Custom Theme: Blue Highlight & White Text --- */
+
+:root {
+  --body-text-color: #ffffff;
+  --card-background-color: rgba(30, 30, 30, 0.6); /* Dunkel-Transparent */
+  --nav-background-color: rgba(10, 20, 40, 0.85); /* Tiefblau fuer den Header */
+  --primary-color: #007bff;
+}
+
+/* Der Hintergrund aus deinem customBodyHtml */
 .bg-image {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -1; /* Ganz wichtig: Muss hinter den Content */
-  
-  /* Hier dein Bild rein */
-  background-image: url('https://djwillgill.com/wp-content/uploads/2024/08/DJ-Mixers-scaled.jpg');
+  z-index: -1;
+  background-image: url('https://djwillgill.com/wp-content/uploads/2024/08/DJ-Mixers-scaled.jpg'); /* Deine URL hier */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  
-  /* Optional: Ein leichter Rot-Schleier, damit es zum Rest passt */
   background-color: rgba(0, 20, 40, 0.6); 
   background-blend-mode: overlay;
 }
 
-/* WICHTIG: Damit man das Bild sieht, muss der Standard-Body transparent sein */
 body {
   background-color: transparent !important;
+  color: #ffffff !important;
+  font-family: 'Inter', sans-serif;
 }
+
+/* Header mit blauem Highlight */
+nav, header {
+  background-color: var(--nav-background-color) !important;
+  border-bottom: 2px solid #007bff !important; /* Blaues Highlight */
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3) !important;
+  border-bottom-left-radius: 18px;
+  border-bottom-right-radius: 18px;
+}
+
+nav a, .navbar-brand {
+  color: #ffffff !important;
+  font-weight: 600;
+}
+
+/* Boxen/Cards mit Blur und grauem Rand */
+.card, .container main > div {
+  background-color: var(--card-background-color) !important;
+  backdrop-filter: blur(12px) saturate(150%) !important;
+  -webkit-backdrop-filter: blur(12px) saturate(150%) !important;
+  border: 1px solid rgba(200, 200, 200, 0.3) !important; /* Grauer Rand */
+  border-radius: 18px !important;
+  color: #ffffff !important;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Alle Texte innerhalb der Boxen auf Weiss zwingen */
+h1, h2, h3, p, span, div {
+  color: #ffffff !important;
+}
+
+/* Damit die Zeitstempel und kleinen Texte lesbar bleiben */
+small, .text-gray-500 {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
+/* Die Status-Punkte (Online/Offline) */
+.up { color: #00ffcc !important; }
+.down { color: #ff4d4d !important; }
