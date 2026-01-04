@@ -1,13 +1,12 @@
-/* --- Upptime Custom Theme: Blue Highlight & White Text --- */
+/* --- Upptime Custom Theme: Ultra-Blur & Clean Design --- */
 
 :root {
   --body-text-color: #ffffff;
-  --card-background-color: rgba(30, 30, 30, 0.6); /* Dunkel-Transparent */
-  --nav-background-color: rgba(10, 20, 40, 0.85); /* Tiefblau fuer den Header */
+  --card-background-color: rgba(20, 20, 20, 0.4); /* Noch transparenter für mehr Blur-Effekt */
   --primary-color: #007bff;
 }
 
-/* Der Hintergrund aus deinem customBodyHtml */
+/* Hintergrund aus deinem customBodyHtml */
 .bg-image {
   position: fixed;
   top: 0;
@@ -15,11 +14,11 @@
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  background-image: url('https://djwillgill.com/wp-content/uploads/2024/08/DJ-Mixers-scaled.jpg'); /* Deine URL hier */
+  background-image: url('https://status.breathfm.de/hintergrund.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: rgba(0, 20, 40, 0.6); 
+  background-color: rgba(0, 10, 25, 0.5); 
   background-blend-mode: overlay;
 }
 
@@ -29,41 +28,41 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-/* Header mit blauem Highlight */
+/* Header transparent ohne blaue Box, nur mit Highlight-Linie */
 nav, header {
-  background-color: var(--nav-background-color) !important;
-  border-bottom: 2px solid #007bff !important; /* Blaues Highlight */
-  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3) !important;
-  border-bottom-left-radius: 18px;
-  border-bottom-right-radius: 18px;
+  background-color: rgba(255, 255, 255, 0.05) !important; /* Fast komplett transparent */
+  backdrop-filter: blur(25px) !important; /* Starker Blur im Header */
+  -webkit-backdrop-filter: blur(25px) !important;
+  border-bottom: 3px solid #007bff !important; /* Die blaue Highlight-Linie */
+  border-top: none !important;
+  border-left: none !important;
+  border-right: none !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+  border-bottom-left-radius: 25px !important;
+  border-bottom-right-radius: 25px !important;
+  margin-bottom: 2rem;
 }
 
-nav a, .navbar-brand {
-  color: #ffffff !important;
-  font-weight: 600;
-}
-
-/* Boxen/Cards mit Blur und grauem Rand */
+/* Boxen/Cards mit extremem Blur und runderen Kanten */
 .card, .container main > div {
   background-color: var(--card-background-color) !important;
-  backdrop-filter: blur(12px) saturate(150%) !important;
-  -webkit-backdrop-filter: blur(12px) saturate(150%) !important;
-  border: 1px solid rgba(200, 200, 200, 0.3) !important; /* Grauer Rand */
-  border-radius: 18px !important;
+  backdrop-filter: blur(30px) saturate(180%) !important; /* Maximaler Glass-Effekt */
+  -webkit-backdrop-filter: blur(30px) saturate(180%) !important;
+  border: 1px solid rgba(255, 255, 255, 0.15) !important; /* Dezenter grauer Rand */
+  border-radius: 28px !important; /* Viel runder */
   color: #ffffff !important;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important;
+  padding: 1.5rem !important;
 }
 
-/* Alle Texte innerhalb der Boxen auf Weiss zwingen */
-h1, h2, h3, p, span, div {
-  color: #ffffff !important;
+/* Zweiter Abschnitt: Blaue Boxen entfernen (Background transparent machen) */
+section, .section, main > div {
+  background-image: none !important;
+  background-color: transparent !important;
 }
 
-/* Damit die Zeitstempel und kleinen Texte lesbar bleiben */
-small, .text-gray-500 {
-  color: rgba(255, 255, 255, 0.7) !important;
-}
-
-/* Die Status-Punkte (Online/Offline) */
-.up { color: #00ffcc !important; }
-.down { color: #ff4d4d !important; }
+/* Grüne Farbe (Online-Status) dicker und leuchtender */
+.up { 
+  color: #00ff88 !important; 
+  font-weight: 800 !important; /* Text dicker */
+  text-shadow: 0 0 15px rgba(0
