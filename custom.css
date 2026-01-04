@@ -1,4 +1,4 @@
-/* --- Upptime: BreathFM Look - Clean Intro & Aligned Boxes --- */
+/* --- Upptime: Clean BreathFM Look with Thick Live-Status Border --- */
 
 :root {
   --body-background-color: #0b0c10 !important;
@@ -11,7 +11,6 @@ body {
   background-image: radial-gradient(circle at center, #1a1c23 0%, #0b0c10 100%) !important;
   background-attachment: fixed !important;
   color: #e8e9ed !important;
-  overflow-x: hidden;
 }
 
 .bg-image {
@@ -25,38 +24,36 @@ body {
   filter: grayscale(100%);
 }
 
-/* 2. INTRO-BOX ELIMINIEREN & TEXT NACH RECHTS RUECKEN */
-/* Wir entfernen alles Sichtbare von der ersten Box und allen moeglichen Containern darin */
+/* 2. Intro-Box komplett entfernen (Nur Text bleibt) */
 main > div:first-of-type, 
-section:first-of-type, 
-.container > div:first-child,
-main > div:first-of-type > div {
+section:first-of-type,
+.container > div:first-child {
   background: transparent !important;
-  background-color: transparent !important;
   border: none !important;
   box-shadow: none !important;
   backdrop-filter: none !important;
-  -webkit-backdrop-filter: none !important;
-  
-  /* Text weiter vom Rand weg nach rechts schieben */
-  padding-left: 10% !important; 
-  padding-right: 5% !important;
-  text-align: left !important;
+  padding-left: 5% !important; /* Etwas vom Rand weg */
 }
 
-/* 3. ALLE ANDEREN BOXEN (Senderliste etc.) */
-/* Einheitlicher Hintergrund mit transparenter BreathFM-Farbe */
+/* 3. Live-Status Abschnitt: Dickere Ränder */
+/* In Upptime ist das meist die zweite grosse Box nach dem Intro */
 main > div:not(:first-of-type), 
-.card, 
-.container main > div,
+.card,
 section:not(:first-of-type) {
-  background-color: rgba(25, 28, 36, 0.5) !important; /* Transparente BreathFM-Farbe */
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-  border-radius: 12px !important;
+  background-color: rgba(25, 28, 36, 0.5) !important;
+  border: 4px solid rgba(255, 255, 255, 0.2) !important; /* Dickere Kante */
+  border-radius: 16px !important;
   backdrop-filter: blur(12px) !important;
-  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6) !important;
   padding: 2rem !important;
   margin-bottom: 2rem !important;
-  
-  /* Hier den Text auch leicht vom Rand weg, aber weniger als oben */
-  padding-left: 2rem !important
+}
+
+/* 4. Texte & Header */
+h1, h2, h3, p, span {
+  color: #e8e9ed !important;
+}
+
+nav, header {
+  background-color: rgba(11, 12, 16, 0.9) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
