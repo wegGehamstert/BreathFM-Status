@@ -1,0 +1,22 @@
+/* Hintergrund fuer die gesamte Seite */
+body {
+    background-image: url('https://djwillgill.com/wp-content/uploads/2024/08/DJ-Mixers-scaled.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+    background-attachment: fixed !important;
+    background-repeat: no-repeat !important;
+}
+
+/* Falls dein customBodyHtml-Div verwendet werden soll */
+.bg-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Schiebt das Bild hinter den Content */
+    background-image: url('DEINE_BILD_URL_HIER');
+    background-size: cover;
+    background-position: center;
+    filter: brightness(0.5); /* Macht es etwas dunkler fuer bessere Lesbarkeit */
+}
