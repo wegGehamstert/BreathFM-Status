@@ -36,7 +36,7 @@ status-website:
   themeUrl: https://status.breathfm.de/custom.css
   introTitle: "**BreathFM** ist ein Webradio aus der Schweiz welches in die ganze Welt streamt!"
   introMessage: Hier seht ihr den Status unserer Sender!
-  customBodyHtml: https://djwillgill.com/wp-content/uploads/2024/08/DJ-Mixers-scaled.jpg
+  customBodyHtml: <div class="bg-image"></div>
   favicon: https://r2.e-z.host/7e095bd3-bee6-4515-afab-65c01b5c886c/srk5mbe3.png
   metaTags:
     - name: "theme-color"
