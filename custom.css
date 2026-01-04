@@ -2,7 +2,7 @@ body {
   background-color: #0b0c10 !important;
   background-image: radial-gradient(circle at center, #1a1c23 0%, #0b0c10 100%) !important;
   background-attachment: fixed !important;
-  color: #e8e9ed !important;
+  color: #e8e9ed
 }
 
 .bg-image {
