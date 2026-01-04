@@ -3,14 +3,13 @@ owner: BreathFM # Your GitHub organization or username, where this repository li
 repo: BreathFM-Status # The name of this repository
 
 sites:
+  - name: Streamserver
+    url: https://stream.breathfm.de/login
   - name: Mainstream
     url: 88.99.104.157
     port: 8000
     check: "tcp-ping"
     ipv6: false
-  - name: Streamserver
-    url: https://stream.breathfm.de
-    
   - name: InTheMiX
     url: 88.99.104.157
     port: 8010
