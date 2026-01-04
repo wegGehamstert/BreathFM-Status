@@ -1,84 +1,83 @@
-/* --- Upptime Custom Theme: Targeted Intro Centering --- */
+/* --- Upptime: Ultra-Blur, No Blue Header, Targeted Centering --- */
 
 :root {
-  --body-text-color: #ffffff;
-  --card-background-color: rgba(20, 20, 20, 0.45);
+  --body-text-color: #ffffff !important;
+  --card-background-color: rgba(15, 15, 15, 0.3) !important; /* Transparenter für mehr Blur */
 }
 
-/* Hintergrund aus deinem customBodyHtml */
+/* 1. Hintergrund & Blur-Fix */
 .bg-image {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  z-index: -1;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: -2;
   background-image: url('https://djwillgill.com/wp-content/uploads/2024/08/DJ-Mixers-scaled.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-color: rgba(0, 10, 25, 0.5); 
-  background-blend-mode: overlay;
+  background-color: rgba(0, 15, 35, 0.65) !important; 
+  background-blend-mode: overlay !important;
 }
 
 body {
   background-color: transparent !important;
   color: #ffffff !important;
-  font-family: 'Inter', sans-serif;
 }
 
-/* Header: Transparent mit blauer Linie und grauem Schatten */
-nav, header {
-  background-color: rgba(255, 255, 255, 0.05) !important;
-  backdrop-filter: blur(25px) !important;
-  -webkit-backdrop-filter: blur(25px) !important;
-  border-bottom: 3px solid #007bff !important;
-  box-shadow: 0 8px 25px rgba(100, 100, 100, 0.2) !important;
-  border-bottom-left-radius: 25px !important;
-  border-bottom-right-radius: 25px !important;
+/* 2. Header: Absolut KEIN Blau mehr, nur die Linie */
+nav, header, .navbar {
+  background: rgba(255, 255, 255, 0.02) !important; /* Fast unsichtbar */
+  background-color: transparent !important;
+  backdrop-filter: blur(40px) saturate(150%) !important; /* Massiver Blur */
+  -webkit-backdrop-filter: blur(40px) saturate(150%) !important;
+  border-bottom: 4px solid #007bff !important; /* Nur die Highlight-Linie */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important; /* Grauer Schatten */
+  border-radius: 0 0 30px 30px !important;
 }
 
-/* Box-Styles mit dicken Rändern & Schatten */
-.card, .container main > div {
-  background-color: var(--card-background-color) !important;
-  backdrop-filter: blur(30px) saturate(180%) !important;
-  -webkit-backdrop-filter: blur(30px) saturate(180%) !important;
-  border: 3px solid rgba(200, 200, 200, 0.4) !important;
-  border-radius: 30px !important;
-  color: #ffffff !important;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5) !important;
-  padding: 2rem !important;
-  margin-bottom: 2rem !important;
+/* 3. Boxen: Dickere graue Ränder & maximaler Glass-Effekt */
+.card, .container main > div, section {
+  background-color: rgba(20, 20, 20, 0.4) !important;
+  backdrop-filter: blur(50px) brightness(0.8) !important; /* Ultra Blur */
+  -webkit-backdrop-filter: blur(50px) brightness(0.8) !important;
+  border: 5px solid rgba(180, 180, 180, 0.5) !important; /* Sehr dicker grauer Rand */
+  border-radius: 40px !important; /* Noch runder */
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6) !important;
+  margin-bottom: 2.5rem !important;
 }
 
-/* NUR den Text in der ersten Box (Intro/Status) zentrieren */
-main > div:first-of-type h1,
-main > div:first-of-type p,
-main > div:first-of-type .lead {
+/* 4. SPEZIELLES ZENTRIEREN: Nur die Intro-Box (BreathFM Text) */
+/* Wir suchen gezielt nach dem Container, der deinen Intro-Text enthält */
+main > div:first-of-type, 
+header + main > div,
+.container > div:first-child {
   text-align: center !important;
-  width: 100%;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
 }
 
-/* Sicherstellen, dass die Liste der Sender linksbuendig bleibt */
-main > div:not(:first-of-type) {
+/* Text-Elemente in der Intro-Box mittig zwingen */
+main > div:first-of-type h1, 
+main > div:first-of-type p, 
+main > div:first-of-type div {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* 5. Restliche Boxen (Senderliste) wieder linksbuendig */
+main > div:not(:first-of-type),
+.card-content {
   text-align: left !important;
+  display: block !important;
 }
 
-/* Status-Gruen (Standard-Dicke) */
-.up { 
-  color: #00ff88 !important; 
-  font-weight: normal !important;
-}
-
-/* Alle Texte weiss */
-h1, h2, h3, h4, p, span, div, strong {
+/* 6. Text-Korrekturen */
+h1, h2, h3, p, span, strong, .lead {
   color: #ffffff !important;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5) !important; /* Bessere Lesbarkeit */
 }
 
-/* Zeitstempel dezenter */
-small, .text-gray-500 {
-  color: rgba(255, 255, 255, 0.6) !important;
-}
-  color: #00ff88 !important; 
-  font-weight: 800 !important; /* Text dicker */
-  text-shadow: 0 0 15px rgba(0
+/* Online-Status */
+.up { color: #00ff88 !important; }
