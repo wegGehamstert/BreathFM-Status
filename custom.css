@@ -1,9 +1,8 @@
-/* --- Upptime Custom Theme: Ultra-Blur & Clean Design --- */
+/* --- Upptime Custom Theme: Targeted Intro Centering --- */
 
 :root {
   --body-text-color: #ffffff;
-  --card-background-color: rgba(20, 20, 20, 0.4); /* Noch transparenter für mehr Blur-Effekt */
-  --primary-color: #007bff;
+  --card-background-color: rgba(20, 20, 20, 0.45);
 }
 
 /* Hintergrund aus deinem customBodyHtml */
@@ -14,7 +13,7 @@
   width: 100vw;
   height: 100vh;
   z-index: -1;
-  background-image: url('https://status.breathfm.de/hintergrund.jpg');
+  background-image: url('https://djwillgill.com/wp-content/uploads/2024/08/DJ-Mixers-scaled.jpg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -28,41 +27,58 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
-/* Header transparent ohne blaue Box, nur mit Highlight-Linie */
+/* Header: Transparent mit blauer Linie und grauem Schatten */
 nav, header {
-  background-color: rgba(255, 255, 255, 0.05) !important; /* Fast komplett transparent */
-  backdrop-filter: blur(25px) !important; /* Starker Blur im Header */
+  background-color: rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(25px) !important;
   -webkit-backdrop-filter: blur(25px) !important;
-  border-bottom: 3px solid #007bff !important; /* Die blaue Highlight-Linie */
-  border-top: none !important;
-  border-left: none !important;
-  border-right: none !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2) !important;
+  border-bottom: 3px solid #007bff !important;
+  box-shadow: 0 8px 25px rgba(100, 100, 100, 0.2) !important;
   border-bottom-left-radius: 25px !important;
   border-bottom-right-radius: 25px !important;
-  margin-bottom: 2rem;
 }
 
-/* Boxen/Cards mit extremem Blur und runderen Kanten */
+/* Box-Styles mit dicken Rändern & Schatten */
 .card, .container main > div {
   background-color: var(--card-background-color) !important;
-  backdrop-filter: blur(30px) saturate(180%) !important; /* Maximaler Glass-Effekt */
+  backdrop-filter: blur(30px) saturate(180%) !important;
   -webkit-backdrop-filter: blur(30px) saturate(180%) !important;
-  border: 1px solid rgba(255, 255, 255, 0.15) !important; /* Dezenter grauer Rand */
-  border-radius: 28px !important; /* Viel runder */
+  border: 3px solid rgba(200, 200, 200, 0.4) !important;
+  border-radius: 30px !important;
   color: #ffffff !important;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4) !important;
-  padding: 1.5rem !important;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5) !important;
+  padding: 2rem !important;
+  margin-bottom: 2rem !important;
 }
 
-/* Zweiter Abschnitt: Blaue Boxen entfernen (Background transparent machen) */
-section, .section, main > div {
-  background-image: none !important;
-  background-color: transparent !important;
+/* NUR den Text in der ersten Box (Intro/Status) zentrieren */
+main > div:first-of-type h1,
+main > div:first-of-type p,
+main > div:first-of-type .lead {
+  text-align: center !important;
+  width: 100%;
 }
 
-/* Grüne Farbe (Online-Status) dicker und leuchtender */
+/* Sicherstellen, dass die Liste der Sender linksbuendig bleibt */
+main > div:not(:first-of-type) {
+  text-align: left !important;
+}
+
+/* Status-Gruen (Standard-Dicke) */
 .up { 
+  color: #00ff88 !important; 
+  font-weight: normal !important;
+}
+
+/* Alle Texte weiss */
+h1, h2, h3, h4, p, span, div, strong {
+  color: #ffffff !important;
+}
+
+/* Zeitstempel dezenter */
+small, .text-gray-500 {
+  color: rgba(255, 255, 255, 0.6) !important;
+}
   color: #00ff88 !important; 
   font-weight: 800 !important; /* Text dicker */
   text-shadow: 0 0 15px rgba(0
