@@ -1,4 +1,4 @@
-/* --- Upptime: Clean BreathFM Look with Thick Live-Status Border --- */
+/* --- Upptime: BreathFM Original Look - Clean Intro Fix --- */
 
 :root {
   --body-background-color: #0b0c10 !important;
@@ -11,6 +11,7 @@ body {
   background-image: radial-gradient(circle at center, #1a1c23 0%, #0b0c10 100%) !important;
   background-attachment: fixed !important;
   color: #e8e9ed !important;
+  overflow-x: hidden;
 }
 
 .bg-image {
@@ -24,36 +25,49 @@ body {
   filter: grayscale(100%);
 }
 
-/* 2. Intro-Box komplett entfernen (Nur Text bleibt) */
+/* 2. INTRO-BOX FIX (Bleibt wie gewünscht) */
 main > div:first-of-type, 
-section:first-of-type,
-.container > div:first-child {
+section:first-of-type, 
+.container > div:first-child,
+main > div:first-of-type > div {
   background: transparent !important;
+  background-color: transparent !important;
   border: none !important;
   box-shadow: none !important;
   backdrop-filter: none !important;
-  padding-left: 5% !important; /* Etwas vom Rand weg */
+  -webkit-backdrop-filter: none !important;
+  
+  /* Text-Positionierung */
+  padding-left: 10% !important; 
+  padding-right: 5% !important;
+  text-align: left !important;
 }
 
-/* 3. Live-Status Abschnitt: Dickere Ränder */
-/* In Upptime ist das meist die zweite grosse Box nach dem Intro */
+/* 3. ALLE ANDEREN BOXEN (Rückbau auf Standard) */
 main > div:not(:first-of-type), 
-.card,
+.card, 
+.container main > div,
 section:not(:first-of-type) {
+  /* Hier habe ich die dicken Ränder und extra Schatten entfernt */
   background-color: rgba(25, 28, 36, 0.5) !important;
-  border: 4px solid rgba(255, 255, 255, 0.2) !important; /* Dickere Kante */
-  border-radius: 16px !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 12px !important;
   backdrop-filter: blur(12px) !important;
   padding: 2rem !important;
   margin-bottom: 2rem !important;
 }
 
-/* 4. Texte & Header */
-h1, h2, h3, p, span {
+/* 4. Header / Navbar */
+nav, header, .navbar {
+  background-color: rgba(11, 12, 16, 0.9) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+  backdrop-filter: blur(10px);
+}
+
+/* 5. Texte */
+h1, h2, h3, p, span, div {
   color: #e8e9ed !important;
 }
 
-nav, header {
-  background-color: rgba(11, 12, 16, 0.9) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
-}
+small, .text-gray-500 {
+  color: rgba(232, 233, 237,
