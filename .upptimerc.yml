@@ -25,11 +25,6 @@ sites:
     port: 8030
     check: "tcp-ping"
     ipv6: false
-  - name: TEST
-    url: 88.99.104.157
-    port: 8999
-    check: "tcp-ping"
-    ipv6: false
 
 
 status-website:
