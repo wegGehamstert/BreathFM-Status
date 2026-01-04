@@ -1,11 +1,3 @@
-/* --- Upptime: BreathFM Look - No Box for Intro --- */
-
-:root {
-  --body-background-color: #0b0c10 !important;
-  --body-text-color: #e8e9ed !important;
-}
-
-/* 1. BreathFM Hintergrund-Style */
 body {
   background-color: #0b0c10 !important;
   background-image: radial-gradient(circle at center, #1a1c23 0%, #0b0c10 100%) !important;
@@ -24,7 +16,6 @@ body {
   filter: grayscale(100%);
 }
 
-/* Header / Navbar */
 nav, header {
   background-color: rgba(11, 12, 16, 0.8) !important;
   border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
