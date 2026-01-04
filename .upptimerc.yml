@@ -31,7 +31,7 @@ status-website:
   # Add your custom domain name, or remove the `cname` line if you don't have a domain
   # Uncomment the `baseUrl` line if you don't have a custom domain and add your repo name there
   cname: status.breathfm.de
-  logoUrl: https://breathfm.de/static/media/Logo.4eaca830821acccb7df5490a622f2bb4.svg
+  logoUrl: https://breathfm.de/breathfm-logo-transparent.png
   name: BreathFM Status
   themeUrl: https://status.breathfm.de/custom.css
   introTitle: "**BreathFM** ist ein Webradio aus der Schweiz welches in die ganze Welt streamt!"
