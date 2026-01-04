@@ -33,7 +33,7 @@ status-website:
   cname: status.breathfm.de
   logoUrl: https://breathfm.de/static/media/Logo.4eaca830821acccb7df5490a622f2bb4.svg
   name: BreathFM Status
-  themeUrl: https://github.com/wegGehamstert/BreathFM-Status/blob/master/assets/custom.css
+  themeUrl: https://status.breathfm.de/custom.css
   introTitle: "**BreathFM** ist ein Webradio aus der Schweiz welches in die ganze Welt streamt!"
   introMessage: Hier seht ihr den Status unserer Sender!
   customBodyHtml: <div class="bg-image"></div>
