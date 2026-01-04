@@ -1,24 +1,24 @@
-:root {
-  /* Definiere trotzdem Grundfarben, falls das Bild mal laedt */
-  --body-background-color: #0b0c10; 
-  --body-text-color: #e8e9ed;
-  --card-background-color: rgba(25, 28, 36, 0.8);
-  --nav-background-color: rgba(25, 20, 20, 0.9);
-  --nav-border-bottom-color: rgba(215, 90, 90, 0.3);
+/* Das leere Div als Vollbild-Hintergrund aufbauen */
+.bg-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1; /* Ganz wichtig: Muss hinter den Content */
+  
+  /* Hier dein Bild rein */
+  background-image: url('https://djwillgill.com/wp-content/uploads/2024/08/DJ-Mixers-scaled.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* Optional: Ein leichter Rot-Schleier, damit es zum Rest passt */
+  background-color: rgba(0, 20, 40, 0.6); 
+  background-blend-mode: overlay;
 }
 
-/* Hier kommt der magische Teil fuer das Bild */
+/* WICHTIG: Damit man das Bild sieht, muss der Standard-Body transparent sein */
 body {
-  background-image: url('https://deine-bild-url.com/hintergrund.jpg') !important;
-  background-size: cover !important;
-  background-position: center !important;
-  background-attachment: fixed !important;
-  background-repeat: no-repeat !important;
-}
-
-/* Damit die Karten nicht komplett blockig aussehen, machen wir sie leicht transparent */
-.card {
-  background-color: var(--card-background-color) !important;
-  backdrop-filter: blur(10px);
-  border-radius: 18px !important;
+  background-color: transparent !important;
 }
