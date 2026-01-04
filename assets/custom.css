@@ -1,16 +1,17 @@
-/* --- Upptime: BreathFM Look - No Box for Intro --- */
+/* --- Upptime: BreathFM Look - Clean Intro & Aligned Boxes --- */
 
 :root {
   --body-background-color: #0b0c10 !important;
   --body-text-color: #e8e9ed !important;
 }
 
-/* 1. BreathFM Hintergrund-Style */
+/* 1. Hintergrund-Setup */
 body {
   background-color: #0b0c10 !important;
   background-image: radial-gradient(circle at center, #1a1c23 0%, #0b0c10 100%) !important;
   background-attachment: fixed !important;
   color: #e8e9ed !important;
+  overflow-x: hidden;
 }
 
 .bg-image {
@@ -24,39 +25,38 @@ body {
   filter: grayscale(100%);
 }
 
-/* 2. DIE BOX VOM INTRO ENTFERNEN */
-/* Wir entfernen Hintergrund, Rand und Schatten der allerersten Inhaltsbox */
-main > div:first-of-type,
-section:first-of-type {
+/* 2. INTRO-BOX ELIMINIEREN & TEXT NACH RECHTS RUECKEN */
+/* Wir entfernen alles Sichtbare von der ersten Box und allen moeglichen Containern darin */
+main > div:first-of-type, 
+section:first-of-type, 
+.container > div:first-child,
+main > div:first-of-type > div {
   background: transparent !important;
   background-color: transparent !important;
   border: none !important;
   box-shadow: none !important;
   backdrop-filter: none !important;
   -webkit-backdrop-filter: none !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+  
+  /* Text weiter vom Rand weg nach rechts schieben */
+  padding-left: 10% !important; 
+  padding-right: 5% !important;
+  text-align: left !important;
 }
 
-/* 3. Normale Boxen (Senderliste etc.) behalten das Design */
+/* 3. ALLE ANDEREN BOXEN (Senderliste etc.) */
+/* Einheitlicher Hintergrund mit transparenter BreathFM-Farbe */
 main > div:not(:first-of-type), 
-.card {
-  background-color: rgba(25, 28, 36, 0.4) !important;
-  border: 1px solid rgba(255, 255, 255, 0.05) !important;
+.card, 
+.container main > div,
+section:not(:first-of-type) {
+  background-color: rgba(25, 28, 36, 0.5) !important; /* Transparente BreathFM-Farbe */
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
   border-radius: 12px !important;
-  backdrop-filter: blur(10px) !important;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(12px) !important;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6) !important;
   padding: 2rem !important;
   margin-bottom: 2rem !important;
-}
-
-/* 4. Texteinstellungen */
-h1, h2, h3, p, span {
-  color: #e8e9ed !important;
-}
-
-/* Header / Navbar */
-nav, header {
-  background-color: rgba(11, 12, 16, 0.8) !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
-}
+  
+  /* Hier den Text auch leicht vom Rand weg, aber weniger als oben */
+  padding-left: 2rem !important
